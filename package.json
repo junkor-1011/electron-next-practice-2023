@@ -21,7 +21,8 @@
     "pack-app:win": "docker compose run --rm builder bash -c \"pnpm build && pnpm electron-builder --win --x64 --dir\"",
     "dist": "pnpm build && electron-builder",
     "dist:win": "docker compose run --rm builder bash -c \"pnpm build && pnpm electron-builder --win --x64\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.50.0",
@@ -33,6 +34,8 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.8"
   },
