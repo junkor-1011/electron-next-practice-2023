@@ -24,7 +24,7 @@ app.on('ready', async () => {
     const cspContents = app.isPackaged
       ? ["default-src 'self' 'unsafe-inline'"]
       : ["default-src 'self' 'unsafe-inline' 'unsafe-eval'"];
-      // eslint-disable-next-line n/no-callback-literal
+    // eslint-disable-next-line n/no-callback-literal
     callback({
       responseHeaders: {
         ...details.responseHeaders,

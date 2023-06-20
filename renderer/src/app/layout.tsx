@@ -11,13 +11,11 @@ export const metadata = {
 
 const RootLayout: React.FC<{
   children: React.ReactNode;
-}> = ({
-  children,
-}) => {
+}> = ({ children }) => {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
   );
-}
+};
 export default RootLayout;

@@ -15,5 +15,5 @@ const SendButton: React.FC = () => {
       <h2>ipc send</h2>
     </button>
   );
-}
+};
 export default SendButton;

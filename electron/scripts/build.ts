@@ -8,24 +8,26 @@ import tsconfig from '../tsconfig.json';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-esbuild.build({
-  target: tsconfig.compilerOptions.target,
-  logLevel: 'info',
-  entryPoints: [
-    path.join(__dirname, '../index.ts'),
-    path.join(__dirname, '../preload.ts'),
-  ],
-  outbase: path.join(__dirname, '..'),
-  outdir: path.join(__dirname, '../../main'),
-  bundle: true,
-  minify: true,
-  // sourcemap: true,
-  platform: 'node',
-  external: ['electron'],
-  tsconfig: path.join(__dirname, '../tsconfig.json'),
-}).then(() => {
-  console.log('Done.');
-}).catch((err) => {
-  console.error(err);
-});
-
+esbuild
+  .build({
+    target: tsconfig.compilerOptions.target,
+    logLevel: 'info',
+    entryPoints: [
+      path.join(__dirname, '../index.ts'),
+      path.join(__dirname, '../preload.ts'),
+    ],
+    outbase: path.join(__dirname, '..'),
+    outdir: path.join(__dirname, '../../main'),
+    bundle: true,
+    minify: true,
+    // sourcemap: true,
+    platform: 'node',
+    external: ['electron'],
+    tsconfig: path.join(__dirname, '../tsconfig.json'),
+  })
+  .then(() => {
+    console.log('Done.');
+  })
+  .catch((err) => {
+    console.error(err);
+  });
