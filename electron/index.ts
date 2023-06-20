@@ -17,12 +17,14 @@ registerProtocol({
 });
 
 // Prepare the renderer once the app is ready
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
 app.on('ready', async () => {
   // session
   session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
     const cspContents = app.isPackaged
       ? ["default-src 'self' 'unsafe-inline'"]
       : ["default-src 'self' 'unsafe-inline' 'unsafe-eval'"];
+      // eslint-disable-next-line n/no-callback-literal
     callback({
       responseHeaders: {
         ...details.responseHeaders,
@@ -61,6 +63,7 @@ app.on('web-contents-created', (_event, contents) => {
     const { origin } = new URL(url);
     if (allowedOrigins.includes(origin)) {
       setImmediate(() => {
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         shell.openExternal(url);
       });
     }

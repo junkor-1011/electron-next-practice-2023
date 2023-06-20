@@ -1,7 +1,6 @@
 import { statSync } from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { promisify } from 'node:util';
 import { app, net, protocol, session } from 'electron';
 
 export const protocolInfo = {
@@ -68,16 +67,16 @@ export const registerProtocol = ({
   app.on('ready', () => {
     const session_ = session.defaultSession;
 
-    session_.protocol.handle(protocolInfo.scheme, (request) => {
+    session_.protocol.handle(protocolInfo.scheme, async (request) => {
       const requestPathname = decodeURIComponent(new URL(request.url).pathname);
       const convertedPathname = path.join(baseDir, requestPathname);
       const resolvedPathname = getPath(convertedPathname);
       const fileExtension = path.extname(resolvedPathname);
 
       if (fileExtension === '.asar') {
-        return net.fetch(conv2FilePath(baseIndexPath));
+        return await net.fetch(conv2FilePath(baseIndexPath));
       } else {
-        return net.fetch(conv2FilePath(resolvedPathname));
+        return await net.fetch(conv2FilePath(resolvedPathname));
       }
     });
   });

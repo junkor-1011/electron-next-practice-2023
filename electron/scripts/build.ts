@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import esbuild from 'esbuild';
@@ -21,6 +23,9 @@ esbuild.build({
   platform: 'node',
   external: ['electron'],
   tsconfig: path.join(__dirname, '../tsconfig.json'),
+}).then(() => {
+  console.log('Done.');
+}).catch((err) => {
+  console.error(err);
 });
 
-console.log('Done.');
