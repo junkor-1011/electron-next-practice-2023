@@ -1,8 +1,9 @@
+import React from 'react';
 import SendButton from './SendButton';
 import InvokeButton from './InvokeButton';
 import styles from './page.module.css';
 
-export default function Home() {
+export default function Home(): React.ReactNode {
   return (
     <main className={styles.main}>
       <div className={styles.grid}>

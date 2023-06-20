@@ -3,16 +3,21 @@
 import React from 'react';
 import styles from './page.module.css';
 
-export default function InvokeButton() {
+export default function InvokeButton(): React.ReactNode {
   return (
     <button
       className={styles.card}
-      onClick={async (e: React.MouseEvent<HTMLButtonElement>) => {
+      onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        const res = await window.electronAPI.invokeExample({
+        window.electronAPI.invokeExample({
           message: 'invoke',
+        })
+        .then((res) => {
+          alert(res);
+        })
+        .catch((err) => {
+          alert(err);
         });
-        alert(res);
       }}
     >
       <h2>ipc invoke</h2>
