@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from './page.module.css';
 
-export default function InvokeButton(): React.ReactNode {
+const InvokeButton: React.FC = () => {
   return (
     <button
       className={styles.card}
@@ -24,3 +24,4 @@ export default function InvokeButton(): React.ReactNode {
     </button>
   );
 }
+export default InvokeButton;

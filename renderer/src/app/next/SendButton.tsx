@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from './page.module.css';
 
-export default function SendButton(): React.ReactNode {
+const SendButton: React.FC = () => {
   return (
     <button
       className={styles.card}
@@ -16,3 +16,4 @@ export default function SendButton(): React.ReactNode {
     </button>
   );
 }
+export default SendButton;

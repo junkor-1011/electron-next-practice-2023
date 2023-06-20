@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
 
-export default function Home(): React.ReactNode {
+const Home: React.FC = () => {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -98,3 +98,4 @@ export default function Home(): React.ReactNode {
     </main>
   );
 }
+export default Home;

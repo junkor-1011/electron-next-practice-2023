@@ -3,7 +3,7 @@ import SendButton from './SendButton';
 import InvokeButton from './InvokeButton';
 import styles from './page.module.css';
 
-export default function Home(): React.ReactNode {
+const Home: React.FC = () => {
   return (
     <main className={styles.main}>
       <div className={styles.grid}>
@@ -16,3 +16,4 @@ export default function Home(): React.ReactNode {
     </main>
   );
 }
+export default Home;
