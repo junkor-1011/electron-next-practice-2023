@@ -1,1 +1,7 @@
+main
+node_modules
 **/node_modules
+renderer/.next
+renderer/out
+renderer/next-env.d.ts
+renderer/next.config.js
