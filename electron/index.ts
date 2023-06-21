@@ -52,6 +52,7 @@ app.on('ready', async () => {
 });
 
 // Quit the app once all windows are closed
+// eslint-disable-next-line @typescript-eslint/unbound-method
 app.on('window-all-closed', app.quit);
 
 // Open OS browser for external url

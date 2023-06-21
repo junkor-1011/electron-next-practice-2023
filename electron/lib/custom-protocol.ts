@@ -68,14 +68,17 @@ export const registerProtocol = ({
     const session_ = session.defaultSession;
 
     session_.protocol.handle(protocolInfo.scheme, async (request) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-argument
       const requestPathname = decodeURIComponent(new URL(request.url).pathname);
       const convertedPathname = path.join(baseDir, requestPathname);
       const resolvedPathname = getPath(convertedPathname);
       const fileExtension = path.extname(resolvedPathname);
 
       if (fileExtension === '.asar') {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return await net.fetch(conv2FilePath(baseIndexPath));
       } else {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return await net.fetch(conv2FilePath(resolvedPathname));
       }
     });
