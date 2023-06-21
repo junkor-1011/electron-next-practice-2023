@@ -8,8 +8,12 @@ module.exports = defineConfig({
     node: true,
   },
   extends: [
-    'next/core-web-vitals',
     'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:react/recommended',
+    'next/core-web-vitals',
+    'plugin:jsx-a11y/recommended',
     'standard-with-typescript',
     'prettier',
   ],
@@ -26,5 +30,6 @@ module.exports = defineConfig({
       path.join(__dirname, './renderer/tsconfig.json'),
     ],
   },
+  plugins: ['@typescript-eslint', 'react', 'jsx-a11y'],
   rules: {},
 });
