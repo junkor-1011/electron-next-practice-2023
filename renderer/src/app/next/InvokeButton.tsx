@@ -1,12 +1,11 @@
 'use client';
 
 import React from 'react';
-import styles from './page.module.css';
 
 const InvokeButton: React.FC = () => {
   return (
     <button
-      className={styles.card}
+      className="btn btn-secondary mx-4 rounded-full"
       onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         window.electronAPI
