@@ -1,6 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
+import {
+  deepPink,
+  deepSkyBlue,
+  goldenRod,
+  green,
+  orangeRed,
+} from './style.css';
 
 const Home: React.FC = () => {
   return (
@@ -47,7 +54,7 @@ const Home: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2>
+          <h2 className={orangeRed}>
             Docs <span>-&gt;</span>
           </h2>
           <p>Find in-depth information about Next.js features and API.</p>
@@ -59,7 +66,7 @@ const Home: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2>
+          <h2 className={deepSkyBlue}>
             Learn <span>-&gt;</span>
           </h2>
           <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
@@ -71,7 +78,7 @@ const Home: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2>
+          <h2 className={green}>
             Templates <span>-&gt;</span>
           </h2>
           <p>Explore the Next.js 13 playground.</p>
@@ -83,7 +90,7 @@ const Home: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2>
+          <h2 className={goldenRod}>
             Deploy <span>-&gt;</span>
           </h2>
           <p>
@@ -92,7 +99,7 @@ const Home: React.FC = () => {
         </a>
 
         <a href="/next" className={styles.card}>
-          <h2>next page</h2>
+          <h2 className={deepPink}>next page</h2>
         </a>
       </div>
     </main>
